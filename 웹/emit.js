@@ -12,11 +12,22 @@ export default class Emit{
              this.events[name].push((listener));
     }
 
-    async emit(name){ //쓰고 삭제하게 구현?
+    //원래 emit은 동기적
+    emit(name){ //쓰고 삭제하게 구현?
+
+        this.events[name].forEach((ele) => {
+            new Promise(ele);
+        })
+    }
+
+    //비동기 emit으로 처리 가능한가 시도해본 테스트작
+    
+    async AsyncEmit(name){ //쓰고 삭제하게 구현?
         
         if(!this.events[name])
         {
             console.log("너무 빨라서 사라짐...");
+            console.log(name);
             return false;
         }   
 
@@ -35,3 +46,4 @@ export default class Emit{
     }
 
 }
+
