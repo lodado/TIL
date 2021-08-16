@@ -533,6 +533,12 @@ let strLength: number = (someValue as string).length;
 ```
 
 
+# 결론
+
+ 
+자바스크립트에 부족했던 interface라던가 타입 검사, enum 등에 확장된 기능을 넣어주는 고마운 프레임워크(혹은 언어?)
+ 
+ 
 
 reference
 
