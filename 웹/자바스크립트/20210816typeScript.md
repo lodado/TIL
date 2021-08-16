@@ -1,5 +1,10 @@
 # typescript란
 
+![image](https://user-images.githubusercontent.com/40421183/129580095-19979b70-3b04-44e4-9c54-077f33201a0f.png)
+
+그림 출처  : https://mygumi.tistory.com/210?category=642142
+
+
 TypeScript는 JS의 구문이 허용되는, JavaScript의 상위 집합 언어입니다. 
 
 그러나 TypeScript는 다른 종류의 값들을 사용할 수 있는 방법이 추가된, 타입이 있는 상위 집합입니다.
