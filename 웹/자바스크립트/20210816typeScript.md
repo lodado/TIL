@@ -287,12 +287,13 @@ tsc greeter.ts
 
 ### 클래스 
 
+
+```
+
 interface Person {
     firstName: string;
     lastName: string;
 }
-
-```
 
 class Student {
     fullName: string;
@@ -303,6 +304,112 @@ class Student {
 ```
 
 생성자의 인수에 public을 사용하는 것은 그 인수의 이름으로 프로퍼티를 자동으로 생성하는 축약형
+
+# types
+
+
+* 불리언 (Boolean)
+
+가장 기본적인 데이터 타입은 JavaScript, TypeScript에서 boolean 값이라고 일컫는 참/거짓(true/false) 값입니다.
+
+* 숫자 (Number)
+
+JavaScript처럼, TypeScript의 모든 숫자는 부동 소수 값입니다. 부동 소수에는 number라는 타입이 붙혀집니다.
+
+TypeScript는 16진수, 10진수 리터럴에 더불어, ECMAScript 2015에 소개된 2진수, 8진수 리터럴도 지원합니다.
+
+* 문자열 (String)
+
+TypeScript에서는 텍스트 데이터 타입을 string으로 표현합니다. JavaScript처럼 TypeScript도 큰따옴표 (")나 작은따옴표 (')를 문자열 데이터를 감싸는데 사용합니다.
+
+* 배열 (Array)
+
+TypeScript는 JavaScript처럼 값들을 배열로 다룰 수 있게 해줍니다. 배열 타입은 두 가지 방법으로 쓸 수 있습니다. 첫 번째 방법은, 배열 요소들을 나타내는 타입 뒤에 []를 쓰는 것입니다:
+
+```
+let list: number[] = [1, 2, 3];
+```
+
+두 번째 방법은 제네릭 배열 타입을 쓰는 것입니다.
+
+```
+let list: Array<number> = [1, 2, 3];
+```
+
+* 튜플 (Tuple)
+
+튜플 타입을 사용하면, 요소의 타입과 개수가 고정된 배열을 표현할 수 있습니다. 단 요소들의 타입이 모두 같을 필요는 없습니다. 예를 들어, number, string 이 쌍으로 있는 값을 나타내고 싶을 수 있습니다:
+
+```
+// 튜플 타입으로 선언
+let x: [string, number];
+// 초기화
+x = ["hello", 10]; // 성공
+// 잘못된 초기화
+x = [10, "hello"]; // 오류
+
+```
+
+* 열거 (Enum)
+
+JavaScript의 표준 자료형 집합과 사용하면 도움이 될만한 데이터 형은 enum입니다. C# 같은 언어처럼, enum은 값의 집합에 더 나은 이름을 붙여줄 수 있습니다.
+
+*js엔 없다
+
+* Any
+
+생략
+
+* Void
+
+void는 어떤 타입도 존재할 수 없음을 나타내기 때문에, any의 반대 타입 같습니다. void는 보통 함수에서 반환 값이 없을 때 반환 타입을 표현하기 위해 쓰이는 것을 볼 수 있습니다:
+
+void를 타입 변수를 선언하는 것은 유용하지 않은데, 왜냐하면 그 변수에는 null(--strictNullChecks을 사용하지 않을 때만 해당, 자세한 건 다음 섹션을 참고)또는 undefined 만 할당할 수 있기 때문입니다:
+
+
+* Null and Undefined
+
+기본적으로 null 과 undefined는 다른 모든 타입의 하위 타입니다. 이건, null과 undefined를 number 같은 타입에 할당할 수 있다는 것을 의미합니다.
+
+하지만, --strictNullChecks를 사용하면, null과 undefined는 오직 any와 각자 자신들 타입에만 할당 가능합니다. (예외적으로 undefined는 void에 할당 가능합니다) 이건 많은 일반적인 에러를 방지하는
+
+데 도움을 줍니다. 이 경우, string 또는 null 또는 undefined를 허용하고 싶은 경우 유니언 타입인 string | null | undefined를 사용할 수 있습니다.
+
+* Never
+
+never 타입은 절대 발생할 수 없는 타입을 나타냅니다. 예를 들어, never는 함수 표현식이나 화살표 함수 표현식에서 항상 오류를 발생시키거나 절대 반환하지 않는 반환 타입으로 쓰입니다. 
+
+변수 또한 타입가드에 의해 아무 타입도 얻지 못하게 좁혀지면 never 타입을 얻게 될 수 있습니다.
+
+never타입은 모든 타입에 할당 가능한 하위 타입입니다. 하지만 어떤 타입도 never에 할당할 수 있거나, 하위 타입이 아닙니다.(never 자신은 제외) 심지어 any 도 never에 할당할 수 없습니다.
+
+// never를 반환하는 함수는 함수의 마지막에 도달할 수 없다.
+
+
+* 객체 (Object)
+
+object는 원시 타입이 아닌 타입을 나타냅니다. 예를 들어, number, string, boolean, bigint, symbol, null, 또는 undefined 가 아닌 나머지를 의미합니다.
+
+
+* 타입 단언 (Type assertions)
+
+가끔, TypeScript보다 개발자가 값에 대해 더 잘 알고 일을 때가 있습니다. 대개, 이런 경우는 어떤 엔티티의 실제 타입이 현재 타입보다 더 구체적일 때 발생합니다.
+
+타입 스크립트는 개발자가 필요한 어떤 특정 검사를 수행했다고 인지합니다.
+
+타입 단언에는 두 가지 형태가 있습니다. 하나는, "angle-bracket" 문법입니다:
+```
+let someValue: any = "this is a string";
+
+let strLength: number = (<string>someValue).length;
+```
+다른 하나는 as-문법 입니다.
+```
+let someValue: any = "this is a string";
+
+let strLength: number = (someValue as string).length;
+```
+
 
 
 reference
