@@ -29,7 +29,7 @@ let helloWorld = "Hello World";
 
 자동 타입 추론
 
-## 타입 정의
+## 타입 정의 (interface)
 
 ```
 
@@ -40,7 +40,7 @@ const user = {
 
 ```
 
-위 코드의 타입을 아래 방식으로 정의 가능하다
+위 코드의 타입을 interface를 써서 아래 방식으로 정의 가능하다
 
 
 ```
@@ -56,9 +56,43 @@ const user: User = {
 };
 ```
 
+인터페이스의 모든 프로퍼티가 필요한 것은 아니다.
+
+어떤 조건에서만 존재하거나 아예 없을 수도 있다. => 선택적 프로퍼티
+
+```
+interface SquareConfig {
+    color?: string;
+    width?: number;
+}
+```
+
+읽기 전용 프로퍼티
+
+```
+interface Point {
+    readonly x: number;
+    readonly y: number;
+}
+```
+
+또한, 모든 변경 메서드(Mutating Methods)가 제거된 Array<T>와 동일한 ReadonlyArray<T> 타입을 제공
+ 
+변수는 const를 사용하고 프로퍼티는 readonly를 사용합니다
+ 
+함수 타입 
+ 
+```
+ 
+interface SearchFunc {
+    (source: string, subString: string): boolean;
+}
+ 
+```
+
 클래스도 동일 방식으로 선언 가능
 
-'''
+```
 
 class UserAccount {
   name: string;
@@ -71,10 +105,93 @@ class UserAccount {
 }
 
 const user: User = new UserAccount("Murphy", 1);
+```
+ 
+```
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date): void;
+} 
+```
+ 
+다른 인터페이스처럼 함수 강제도 가능
 
-'''
+클래스와 인터페이스를 다룰 때, 클래스는 두 가지 타입을 가진다는 것을 기억하는 게 좋습니다: 스태틱 타입과 인스턴스 타입
+ 
 
+* 클래스가 인터페이스를 implements 할 때, 클래스의 인스턴스만 검사 => 생성자가 스태틱이기 때문에, 이 검사에 포함 X.
+ 
+```
+interface ClockConstructor {
+  new (hour: number, minute: number);
+}
 
+interface ClockInterface {
+  tick();
+}
+
+const Clock: ClockConstructor = class Clock implements ClockInterface {
+  constructor(h: number, m: number) {}
+  tick() {
+      console.log("beep beep");
+  }
+} 
+```
+ 다음 방식으로 static 타입도 검사
+ 
+ 
+* 클래스처럼, 인터페이스들도 확장(extend)이 가능
+ 
+
+인터페이스 타입이 클래스 타입을 확장하면, 클래스의 멤버는 상속받지만 구현은 상속받지 않는다. 
+ 
+ 기초 클래스의 private과 protected 멤버도 상속받습니다. 이것은 인터페이스가 private 혹은 protected 멤버를 포함한 클래스를 확장할 수 있다는 뜻이고, 
+ 
+ 인터페이스 타입은 그 클래스나 하위클래스에 의해서만 구현
+ 
+ 
+ 
+ 
+### 인덱서블 타입 (Indexable Types)
+
+ ```
+interface StringArray {
+    [index: number]: string;
+}
+
+let myArray: StringArray;
+myArray = ["Bob", "Fred"];
+
+let myStr: string = myArray[0];
+ 
+ ```
+ 인덱스 서명을 지원하는 타입에는 두 가지가 있습니다: 문자열과 숫자.
+
+두 타입의 인덱서(indexer)를 모두 지원하는 것은 가능하지만, 숫자 인덱서에서 반환된 타입은 반드시 문자열 인덱서에서 반환된 타입의 하위 타입(subtype)
+ 
+=> js에서 string으로 변환해 처리하기 때문
+ 
+ 
+ 문자열 인덱스 시그니처는 "사전" 패턴을 기술하는데 강력한 방법이지만, 모든 프로퍼티들이 반환 타입과 일치하도록 강제
+ 
+ ```
+ interface NumberDictionary {
+    [index: string]: number;
+    length: number;    // 성공, length는 숫자입니다
+    name: string;      // 오류, `name`의 타입은 인덱서의 하위타입이 아닙니다
+}
+ ```
+ 
+ 다음방식으로 개선(유니온)
+ ```
+ interface NumberOrStringDictionary {
+    [index: string]: number | string;
+    length: number;    // 성공, length는 숫자입니다
+    name: string;      // 성공, name은 문자열입니다
+}
+ ```
+ 
+ 
 ## 타입 구성 (Composing Types)
 
 방식 - 유니온, 제네릭
