@@ -69,6 +69,8 @@ Declarative : what needs to be accomplished
 
 => data binding, routing
 
+(리엑트는 V만을 맡는다?)
+
 
 reference 
 
