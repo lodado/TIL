@@ -107,6 +107,11 @@ Flux/ Redux
 
 
 # react-bootstrap
+
+부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.
+
+CSS를 직접 만들지 않고 불러와서 사용하면 많은 시간이 절약 될것이다. 
+
 ![image](https://user-images.githubusercontent.com/40421183/129743084-5705ca45-457e-42a3-8e36-37ba8883a54e.png)
 
 다양한 형태의 요소가 Component로 제공된다.
