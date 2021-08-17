@@ -23,9 +23,9 @@ ex) jQuery?
 
 ex) angular 등
 
-## framework principle
+# framework principle
 
-* Hollywood principle
+### Hollywood principle
 
 => dont call us, we'll call you
 
@@ -53,6 +53,8 @@ ex) angular 등
 저수준 구성요소에서 시스템에 접속을 할 수는 있지만, 언제 어떤 식으로 그 구성요소들을 사용할지는 
 
 고수준 구성요소에서 결정하게 된다.
+
+<hr>
 
 * Imperative vs Declarative
 
