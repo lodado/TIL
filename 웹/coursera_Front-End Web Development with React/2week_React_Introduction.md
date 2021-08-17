@@ -25,21 +25,65 @@ no assumptions(가정X) => technology stack는 명확하다
 
 One-way data flow
 
+<hr size="1">
+
 JSX
 
-components
+<hr size="1">
 
 state : 어떻게 나의 코드와 
 
+<hr size="1">
+
 props
 
-virtual dom 
+<hr size="1">
 
-Element
+##### virtual dom(ReactDom)
+
+![image](https://user-images.githubusercontent.com/40421183/129732145-dee8a6ca-298e-4ceb-a4f0-c06310f077e2.png)
+
+이런식으로 real dom과 attach
+
+<hr size="1">
+
+##### Element
+
+smallest building block of react apps
+
+cheaps to create
+
+ex) 
+```
+  const ele = <h1>welcometo React</h1>
+```
+<hr size="1">
+##### components
+
+components are 'made of' elements
+
+```
+class app extends Component {
+  render(){return ...
+  }
+}
+혹은
+
+function App(){return ...}
+```
+
+return 안엔 element들의 조합이 있다. 
+
+<hr size="1">
 
 Flux/ Redux
 
 나중 소개?
+
+
+
+
+
 
 
 
