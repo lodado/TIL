@@ -49,11 +49,25 @@ const element = React.createElement(type:'h1',props:{className:"greeting", child
 
 state : UI를 상호작용하게 만들려면 기반 데이터 모델을 변경할 수 있는 방법이 있어야 합니다. 이를 React는 state를 통해 변경한다.
 
+* private and fully controlled by the component
+
+* can be passed as props to children
+
+오직 클래스만 local state를 가질 수 있다.
+
+![image](https://user-images.githubusercontent.com/40421183/129762403-4251781c-f4ab-4af2-9eb6-64f4c95b296e.png)
+
+또한, setState를 통해서만 업데이트가 가능하다.
+
+
+
 <hr size="1">
 
 props
 
-props는 부모가 자식에게 데이터를 넘겨줄 때 사용할 수 있는 방법
+props는 부모가 자식에게 데이터를 넘겨줄 때 사용할 수 있는 방법 , 또는 JSX attributes들은 
+
+component에 props를 통해(single obj 취급) 처리된다.
 
 props는 (함수 매개변수처럼) 컴포넌트에 전달되는 반면 state는 (함수 내에 선언된 변수처럼) 컴포넌트 안에서 관리된다.
 
@@ -117,6 +131,31 @@ CSS를 직접 만들지 않고 불러와서 사용하면 많은 시간이 절약
 다양한 형태의 요소가 Component로 제공된다.
 
 boostrap 이외에 다른 MaterialUI, SemanticUI 같은거도 사용 가능
+
+### handling Events
+
+dom Elements 핸들링하는거 비슷하게 작동 
+
+```
+<Card onClick={()=>this.onDishSelect(dish)}>
+
+```
+
+### lifting State up
+
+가끔 여러 components 같은 데이터를 share한다
+
+데이터가 변경되면 다른 component들에도 reflect 되야한다.
+
+-> 나중에 처리방법 알려줌?
+
+### List and Keys 
+
+JS와 비슷하게 처리
+
+* lists에선 key값에 id를 꼭 넣어줘야한다.
+
+그러면 key값을 안다면 전체 렌더링이 아닌 부분 렌더링을 통하여 처리를 할 수 있어서 성능 개선에 도움이 된다. 
 
 
 
