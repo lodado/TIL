@@ -29,6 +29,11 @@ One-way data flow
 
 JSX
 
+```
+  const ele = <h1>welcometo React</h1>
+```
+rValue 처럼 html 태그들을 값으로 다룰 수 있다. 
+
 <hr size="1">
 
 state : 어떻게 나의 코드와 
