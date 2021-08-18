@@ -8,9 +8,9 @@
 
 3. 호출이 끝나고 안쓰이는순간 계층적 구조에서 탈퇴
 
-## react component Lifecycle
+# react component Lifecycle
 
-##### 1. Mounting
+## 1. Mounting
 
 만들어지고 DOM에 삽입되는 단계(아래 순서대로 생성)
 
@@ -30,12 +30,7 @@ compoenentDidMount()
 
 * 랜더링 순서 : 생성자 -> render -> mount
 
-
-
-
-
-
-##### Updating
+## Updating
 
 업데이트 : props 또는 state가 변경되면 갱신이 발생한다.
 
@@ -55,11 +50,9 @@ componentDidUpdate()
 
 componentDidUpdate에서는 render이 완료되었기 때문에 DOM에 접근 가능.
 
-##### Unmounting
+## Unmounting
 
 아래 메서드는 컴포넌트가 DOM 상에서 제거될 때에 호출된다.
-
-
 
 오류 처리
 
