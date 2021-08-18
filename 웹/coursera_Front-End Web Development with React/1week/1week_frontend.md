@@ -11,7 +11,7 @@ mvvm & vmc 등 활용
 특정 기능에 대한 도구 또는 함수들의 집합, 알맞은곳에 호출하여 사용 (your code in charge and it calls into the
 library when it sees fit)
 
-ex) jQuery?
+ex) jQuery? React is also library
 
 ##### 프레임워크
 
