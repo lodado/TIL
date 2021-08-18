@@ -30,7 +30,7 @@
  
  main은 presetational component입니다.
  
- 
+
  main에선 다음과 같습니다.
  
 ```
@@ -80,8 +80,58 @@ switch에서 적용 안된 path는 /home으로 작용될것입니다.
 
 NavbarToggler는 누르면 하이라이트 처리되는 메뉴바인듯 싶습니다. 
 
+# router parameter
+
+ex) /menu/42 
+
+42가 파라미터다.
+
+token형태로 parameter를 받는다
+
+path : 'menu/:id' where id is the token
+
+
+### specifying the link(Nav-link 등에 사용)
+
+=> <Link to {\`/menu/${dish.id}\`}>
+
+*js 백틱 방법
+
+router는 3개 props를 컴포넌트에 전달한다. when is it rendered
+
+* match : 라우트 파라미터를 해당 properties에 전달한다.
+
+* location : URL location
+
+* history : : allow you go to back
+
+### match Object
+
+match Object 는 route path가 지금 URL가 알맞은 URL인지 정보를 제공한다.
+
+params은 key/value pair로 주어진 url이 알맞게 주어졌는지 동적으로 잘라서 구별한다.
+
+ex) 
+
+/menu/:id로 지금 path가 되있다면
+
+/menu/42에서 "42"는 match.params.id 와 비교된다.
+
+
+
+### 쿼리 : /menu?details=true
+
+일반적으로는 파라미터는 특정 id 나 이름을 가지고 조회를 할 때 사용하고,
+
+쿼리의 경우엔 어떤 키워드를 검색하거나, 요청을 할 때 필요한 옵션을 전달 할 때 사용
+
+
 
  
 reference 
 
 https://velopert.com/3417
+
+파라미터 & 쿼리
+
+https://velog.io/@bigbrothershin/%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%99%80-%EC%BF%BC%EB%A6%AC
