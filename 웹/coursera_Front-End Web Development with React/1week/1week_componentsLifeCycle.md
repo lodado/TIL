@@ -50,6 +50,8 @@ componentDidUpdate()
 
 componentDidUpdate에서는 render이 완료되었기 때문에 DOM에 접근 가능.
 
+*componentWillReceiveProps(), componentWillUpdate()는 deprecated
+
 ## Unmounting
 
 아래 메서드는 컴포넌트가 DOM 상에서 제거될 때에 호출된다.
