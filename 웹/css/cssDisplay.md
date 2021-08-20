@@ -1,4 +1,4 @@
-### inline
+## inline
 
 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치
 
@@ -11,7 +11,7 @@
  *width와 height 속성을 지정해도 무시
 
 
-### block
+## block
 
 display 속성이 block으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지
 
@@ -23,7 +23,7 @@ block 엘리먼트로 ```<div>```이나 ```<p>```, ```<h1>``` 등이 있다.
 
 *width, height, margin, padding 속성이 모두 반영
 
-### inline-block
+## inline-block
 
 inline 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치됩니다.
 
