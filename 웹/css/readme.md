@@ -1,4 +1,4 @@
-## css 상속 순서 
+## css 상속 순서 - Specificity
 
 1. css의 표현방식 inline 방식 > internal 방식 > external 방식 순으로 우선순위가 높다.
 
