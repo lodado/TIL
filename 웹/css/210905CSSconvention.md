@@ -4,7 +4,9 @@ css 나 html 네이밍 규칙이라던지 뭔가 효율적인 방법이 없을�
 
 팀원분이 이걸 보셨길래 이번에 공부해보려고 한다.
 
-## General Style
+# General Style
+
+<br>
 
 ### Protocol
 
@@ -54,9 +56,9 @@ color: #e5e5e5;
 
 화이트스페이스(빈칸)는 예기치 않은 오작동을 불러올 수 있어서 가능한 제거한다.
 
-## General Meta rules
-
-##  Encoding
+# General Meta rules
+<br>
+###  Encoding
 
 Use UTF-8 (no BOM).
 
@@ -64,17 +66,19 @@ Use UTF-8 (no BOM).
 <meta charset="utf-8">
 ```
 
-## Comments
+### Comments
 
 Explain code as needed, where possible.
 
-## Action Items
+### Action Items
 
 Mark todos and action items with TODO.
 
 나중 해야될일을 TODO로 표시하는듯 싶다.
 
-## HTML style rules
+# HTML style rules
+
+<br>
 
 ### Document Type
 
