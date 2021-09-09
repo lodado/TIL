@@ -10,3 +10,9 @@ state로 render다시 하면 inline된게 지워진다.
 getComputedStyle을 써서 값을 구해주자 
 
 ![image](https://user-images.githubusercontent.com/40421183/132714210-6b8d90ea-09c2-4d25-a10d-2717ab0b177c.png)
+
+나중 읽어볼 내용
+
+https://blueshw.github.io/2019/10/27/scss-module-system/
+
+
