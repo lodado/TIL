@@ -1,5 +1,7 @@
 # 깨달은 지식
 
+- reset.css
+
 - SPA 라우터 작동 방식
 
 - CSR 렌더링 방식 
@@ -39,6 +41,40 @@ ES6에서 추가된 클래스는 다른 언어에는 기본적으로 제공되�
 
 <br>
 
+## resolve로 경로 alias
+
+https://webpack.js.org/configuration/resolve/
+
+import 해줄때 폴더 구조가 복잡해지면 ```import ../../``` 이런식으로 계속 쓰는 경우가 생긴다.
+
+그래서 alias를 사용해주면 경로를 간단히 표현 가능하다. 
+
+```
+const path = require('path');
+
+module.exports = {
+  //...
+  resolve: {
+    alias: {
+      Utilities: path.resolve(__dirname, 'src/utilities/'),
+      Templates: path.resolve(__dirname, 'src/templates/'),
+    },
+  },
+};
+```
+webpack의 webpack.config.js 안에 resolve를 넣어준다.
+
+
+```
+import Utility from '../../utilities/utility';
+```
+위 링크가 
+```
+import Utility from 'Utilities/utility';
+```
+
+이제 아래처럼 alias를 사용해 사용 가능 
+
 # review 요약
 
 https://github.com/boostcampwm-2021/javascript-p2-airbnb/pull/430
@@ -67,6 +103,7 @@ ex) isEdited, isclicked
 영어 의문문에서 주어빼고 사용
 
 ##  css property order convention
+참고 - https://9elements.com/css-rule-order/
 
 https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/
 
